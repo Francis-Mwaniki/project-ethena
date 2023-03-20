@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+</head>
+<body>
+    <!--h1 tag describing Servies  i offers at affordable dolar -->
+    <h1 class="services">Services</h1>
+    <p>Services i offer at affordable dollar</p>
+
+
+  <div class=" main">
+
+    <div class="card">
+        <div class="card-header">
+          <h3>Web Development & Design</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Custom website development</li>
+            <li>Responsive web design</li>
+            <li>E-commerce website development</li>
+            <li>Web application development</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <h4>Backend Development</h4>
+          <ul>
+            <li>Node.js and Express.js</li>
+            <li>Django and Flask</li>
+            <li  class="price">Price: $920</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Prototype Development</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Custom website design</li>
+            <li>informative web design</li>
+            <li>Full website design</li>
+            <li>Web application design</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <h4>Fronted Development</h4>
+          <ul>
+            <li>TailwindCss and Figma</li>
+            <li>Bulma and Bootstrap</li>
+            <li  class="price">Price: $620</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Web Development Consultancy</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Custom SDLC</li>
+            <li>Responsive User Interfaces</li>
+            <li>Backend website development</li>
+            <li> Project development</li>
+
+          </ul>
+        </div>
+        <div class="card-footer">
+          <h4>Project management</h4>
+          <ul>
+            <li>Node.js and Nuxt.js</li>
+            <li>Django and Ruby on rails</li>
+            <!-- price  -->
+            <li  class="price">Price: $200</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+      
+    <style>
+
+        .services{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 20px;
+            color: #2d3748;
+        }
+         p{
+            text-align: center;
+            font-size: 20px;
+            color: #2d3748;
+        }
+        .price{
+            color: #2d3748;
+            background:orange;
+            width: 100%;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+           width: 100%;
+            margin: auto;
+        }
+        .main :hover{
+            background-color: #2d3748;
+            color: #fff;
+        }
+        @media screen and (max-width: 768px) {
+            .main{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                margin: auto;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+               
+                max-width: 400px;
+            }
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            max-width: 400px;
+          }
+          
+          .card-header {
+            background-color: #2d3748;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          
+          .card-body {
+            padding: 20px;
+            text-align: left;
+          }
+          
+          .card-body ul {
+            margin: 0;
+            padding: 0;
+          }
+          
+          .card-body li {
+            list-style: none;
+            margin-bottom: 10px;
+          }
+          
+          .card-footer {
+            background-color: #edf2f7;
+            color: #2d3748;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+          
+          .card-footer ul {
+            margin: 0;
+            padding: 0;
+          }
+          
+          .card-footer li {
+            list-style: none;
+            margin-bottom: 10px;
+          }
+          
+          .card-footer li:first-of-type {
+            margin-top: 10px;
+          }
+          
+    </style>
+</body>
+</html>

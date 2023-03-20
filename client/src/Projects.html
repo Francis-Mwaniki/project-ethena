@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+<body>
+    <h1 class="services">Major Projects</h1>
+    <p>Proving is by Building Projects</p>
+    <div class=" main-pro-card">
+        <div class="pro-card">
+            <div class="pro-card-content">
+                <img src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" class="pro-img">
+              <h2>Music Web App</h2>
+              <p>Artistic Idea with Nuxt.js Framework</p>
+              <a href="https://ephesus-sardis.onrender.com/" class="redirect-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M17 12l-4-4v3H3v2h10v3z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="pro-card">
+            <div class="pro-card-content">
+                <img src="https://github.com/Francis-Mwaniki/nuxt-search-engine/raw/main/assets/preview.png" alt="" class="pro-img">
+              <h2>Nuxt Search engine</h2>
+              <p>Restful Apis with Nuxt.js and Django</p>
+              <a href="https://nuxt-search-engine.vercel.app/" class="redirect-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M17 12l-4-4v3H3v2h10v3z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="pro-card">
+            <div class="pro-card-content">
+                <!-- Img -->
+                <img src="https://github.com/Francis-Mwaniki/image-generation-lexica-api/raw/main/assets/css/img/myscreen.png" alt="" class="pro-img">
+              <h2>Image Ai generation</h2>
+              <p>Generate Images from Text with Nuxt.js</p>
+              <a href="https://image-generation-lexica-api.vercel.app/" class="redirect-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M17 12l-4-4v3H3v2h10v3z"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+         
+    </div>
+    <div class="pro-card-extra">
+        <div class="pro-card-content-extra">
+          <h2>Other major projects</h2>
+            <p>You can find them here in my main  portfolio</p>
+            <!-- Link to projets -->
+            <p>Click the image below you'll be redirected</p>
+            <a href="http://francismwaniki.tech" target="_blank" rel="noopener noreferrer">
+                <img src="../src/public/prof.png" alt="" class="pro-img">
+            </a>
+          
+        </div>
+        
+      </div>
+    <style>
+        .main-pro-card{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .pro-card {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            height: 400px;
+            margin: 20px;
+            overflow: hidden;
+          }
+          .pro-img{
+            width: 100%;
+            height: 100%;
+            margin-top: 10px;
+            object-fit: cover;
+          }
+          .pro-card-extra {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: #2d3748;
+            height: 500px;
+            width: 80%;
+            color: #ffffff;
+            margin: auto;
+            overflow: hidden;
+          }
+          .pro-card-content-extra p{
+            color: #ffffff;}
+            .pro-card-content p{
+                font-size: small;
+            }
+          .pro-card-content, .pro-card-content-extra p, h2 {
+            padding: 10px;
+          }
+          
+          
+          h2 {
+            margin: 0;
+          }
+          
+          .redirect-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f01267;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+          }
+          
+          .redirect-icon:hover {
+            background-color: #ffffff;
+            transform: scale(1.1);
+            transition-duration: calc(0.3s * 1.1);
+
+          }
+          
+          @media (max-width: 768px) {
+            .main-pro-card{
+                flex-direction: column;
+                width: 100%;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+           
+            .pro-card .pro-card-extra {
+              margin: 10px;
+                width: 100%;
+            }
+           .redirect-icon {
+            width: 30px;
+            height: 30px;
+          }
+          .pro-card .pro-card-extra{
+            width: 100%;
+            margin: 10px 0;
+          }
+            }
+    </style>
+</body>
+</html>

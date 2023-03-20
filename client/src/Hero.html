@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero</title>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="Hero">
+        <div class="Hero__container">
+            <div class="Hero__container__text">
+                <h1 class="Hero__container__text__title font-sent">About Me</h1>
+                <p class="Hero__container__text__description">I am a full stack web developer</p>
+                <p id="demo" class="Hero__container__text__description"></p>
+                <button class="Hero__container__text__button" style="margin-bottom: 4px;" id="btn">Click me</button>
+                <button class="Hero__container__text__button">Contact me</button>
+            </div>
+            <div class="Hero__container__image">
+              <!--   <img src="../src/public/code-coding.gif" alt=""> -->
+              <img src="https://camo.githubusercontent.com/8518504a205f83c6d26f677ce0dd8230e6fdbd19a8b9d113bd6589687bd55d7d/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f313239323637372f73637265656e73686f74732f363133393136372f6d656469612f35333837646337653033356233656665396439343531363034346465363661342e676966" alt="francis-mwaniki" />
+               
+            </div>
+        </div>
+    </div>
+    <!-- End of Hero -->
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Space+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@600&family=Sacramento&display=swap");
+.font-sent {
+  font-family: "Pacifico", cursive;
+  font-family: "Rubik", sans-serif;
+  font-family: "Sacramento", cursive;
+  user-select: none;
+  text-underline-offset: 0.2rem;
+  text-decoration: underline;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Space Mono', monospace;
+    
+}
+    .Hero{
+        width: 100%;
+        height: 100vh;
+      
+        display: flex;
+       
+        justify-content: center;
+        align-items: center;
+    }
+    .Hero__container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+    }
+    /*media query*/
+    @media screen and (max-width: 768px){
+        .Hero{
+            padding-top: 60px;
+        }
+        .Hero__container{
+            flex-direction: column;
+            gap: 20px;
+        }
+        .Hero__container__text{
+            width: 100%;
+            height: 50%;
+
+        }
+        .Hero__container__text__title{
+            font-family: 'Space Mono', monospace;
+            color: #000000;
+            margin-bottom: 1rem;
+        }
+        .Hero__container__image{
+            width: 100%;
+            padding-top: 80px;
+            height: 50%;
+        }
+        .Hero__container__text__button{
+            width: 100%;
+            height: 3rem;
+            background-color: #000000;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            
+        }
+        button{
+            width: 100%;
+            height: 3rem;
+            background-color: #000000;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 100px;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+
+    }
+    .Hero__container__text{
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Hero__container__text__title{
+        font-family: 'Space Mono', monospace;
+        font-size: 3rem;
+        color: #000000;
+        margin-bottom: 1rem;
+    }
+    .Hero__container__text__description{
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.5rem;
+        color: #000000;
+        margin-bottom: 1rem;
+    }
+    .Hero__container__text__button{
+        width: 10rem;
+        height: 3rem;
+        background-color: #000000;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .Hero__container__image{
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Hero__container__image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    </style>
+    <script>
+        const txt = 'Francis Mwaniki';
+        const speed = 50;
+        let i = 0;
+        
+        function typeWriter() {
+          const demo = document.getElementById('demo');
+          if (i < txt.length) {
+            demo.innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+          const button = document.getElementById('btn');
+          button.addEventListener('click', () => {
+            typeWriter();
+          });
+        });
+        
+
+    </script>
+</body>
+</html>
