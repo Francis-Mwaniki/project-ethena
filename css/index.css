@@ -13,7 +13,7 @@ nav{
 .container{
     max-width: 100%;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #06263d;
     padding: 34px;
     border-radius: 20px;
     padding-top: 20px;
@@ -101,3 +101,39 @@ h1{
     border-radius: 50%;
 
 }
+
+body {
+    background-color: #02131f;
+    background-image: url("https://i.imgur.com/PFnfpkq.png");
+ 
+  }
+  
+  #hello-wrapper {
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .typewriter {
+    border-right: solid 5px transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 50px;
+    animation:
+    animated-text 1.2s steps(17, end) 1s 1 normal both
+  }
+  
+  /* text animation */
+  @keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  #particles-js {
+    height: 100vh;
+  }
+  

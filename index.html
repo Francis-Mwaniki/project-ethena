@@ -11,16 +11,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Space+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://www.w3schools.com/lib/w3data.js"></script>
+<link rel="stylesheet" type="text/css" href="./public/main.css">
+<link rel="icon" href="./public/favicon.ico" />
+<script type='text/javascript' src='//d3js.org/d3.v3.min.js'></script>
+<script type='text/javascript' src='//d3js.org/topojson.v1.min.js'></script>
+<script type='text/javascript' src='planetaryjs.min.js'></script>
+<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type='text/javascript' src='./public/particles.js'></script>
+<script type='text/javascript' src='./public/globe.js'></script>
 </head>
 <body>
     <div w3-include-html="Navi.html"></div>
-    <div w3-include-html="Hero.html"></div>
+     <!-- Hero -->
+     <div class="Hero">
+        <div class="Hero__container">
+            <div class="Hero__container__text">
+                <h1 class="Hero__container__text__title font-sent">About Me</h1>
+                <p class="Hero__container__text__description" id="output" style="font-family:'Space Mono', monospace;"></p>
+                <button class="Hero__container__text__button">Contact me</button>
+            </div>
+            <div class="Hero__container__image">
+              <!--   <img src="../src/public/code-coding.gif" alt=""> -->
+              <img src="https://cdn.dribbble.com/users/5636/screenshots/5100868/twc_dribbble_2018_development_collaboration_4x.png?compress=1&resize=1600x1200" alt="francis-mwaniki" />
+               
+            </div>
+        </div>
+    </div>
     <div id="root" class="container">
         <div w3-include-html="Features.html"></div>
         <div w3-include-html="Projects.html"></div>
         <div w3-include-html="Contact.html"></div>
 
     </div>
+     
+     <div class="" id="world" style="color:black">
+         <canvas id="rotatingGlobe" style='cursor: move';></canvas>
+     </div>
+    
+        <div w3-include-html="Footer.html"></div>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Space+Mono&display=swap');
 
@@ -28,6 +57,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+  
     font-family:'Space Mono', monospace;
     
 }
@@ -36,6 +66,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #02131f;
             margin: auto;
         }
         @media screen and (min-width: 768px) {
@@ -50,6 +81,98 @@
             #root{
                 width: 768px;
 
+            }
+            .Hero{
+                padding-top: 60px;
+            }
+            .Hero__container{
+                flex-direction: column;
+                display: flex;
+                height: auto;
+                gap: 20px;
+            }
+            .Hero__container__text{
+                width: 100%;
+                height: 50%;
+    
+            }
+            .Hero__container__text__title{
+                font-family: 'Space Mono', monospace;
+                color: #000000;
+                margin-bottom: 1rem;
+            }
+            .Hero__container__image{
+                width: 600px;
+                padding-top: 80px;
+                height: 50%;
+                object-position: center;
+                object-fit: cover;
+            }
+            .Hero__container__text__button{
+                width: 100%;
+                height: 3rem;
+                background-color: #000000;
+                color: #FFFFFF;
+                border: none;
+                border-radius: 5px;
+                font-family: 'Space Mono', monospace;
+                font-size: 1rem;
+                cursor: pointer;
+                
+            }
+            button{
+                width: 100%;
+                height: 3rem;
+                background-color: #000000;
+                color: #FFFFFF;
+                border: none;
+                border-radius: 5px;
+                margin-bottom: 100px;
+                padding: 20px 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                font-family: 'Space Mono', monospace;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+            .Hero__container__text{
+                width: 50%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .Hero__container__text__title{
+                font-family: 'Space Mono', monospace;
+                font-size: 3rem;
+                color: #000000;
+                margin-bottom: 1rem;
+            }
+            .Hero__container__text__description{
+                font-family: 'Nunito', sans-serif;
+                font-size: 1.5rem;
+                color: #FFFFFF;
+                margin-bottom: 1rem;
+            }
+            .Hero__container__text__button{
+                width: 10rem;
+                height: 3rem;
+                background-color: #000000;
+                color: #FFFFFF;
+                border: none;
+                border-radius: 5px;
+                font-family: 'Nunito', sans-serif;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+       
+            .Hero__container__image img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
             
         }
@@ -67,10 +190,84 @@
             }
             
         }
-
+        .font-sent {
+            font-family: "Pacifico", cursive;
+            font-family: "Rubik", sans-serif;
+            font-family: "Sacramento", cursive;
+            user-select: none;
+            text-underline-offset: 0.2rem;
+            text-decoration: underline;
+                color:#fff;
+          }
+          .Hero{
+            width: 100%;
+            height: 100%;
+          
+            display: flex;
+           
+            justify-content: center;
+            align-items: center;
+        }
+        .Hero__container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+    
+            align-items: center;
+        }
+        .Hero__container__text{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+       
     </style>
     <script>
         w3IncludeHTML();
+
+        let roles = ["software engineer", "student", "fullstack dev", "introvert"];
+        let roleIndex = 0;
+        let speed = 100; // in milliseconds
+        
+        function writeRole(i) {
+          let role = roles[roleIndex];
+          let text = "I am a ";
+          for (let j = 0; j < role.length && j < i; j++) {
+            text += role.charAt(j);
+          }
+          let output = document.getElementById("output");
+          if (output) {
+            output.textContent = text;
+          } else {
+            console.error("Element with ID 'output' not found.");
+          }
+          if (i < role.length) {
+            setTimeout(() => writeRole(i + 1), speed);
+          } else {
+            roleIndex++;
+            if (roleIndex === roles.length) {
+              roleIndex = 0;
+            }
+            setTimeout(() => writeRole(0), speed * 4); // pause for 4x the speed after each role
+          }
+        }
+        
+        writeRole(0);
+        
     </script>
+   <script type='text/javascript' src='//d3js.org/d3.v3.min.js'></script>
+<script type='text/javascript' src='//d3js.org/topojson.v1.min.js'></script>
+<script type='text/javascript' src='planetaryjs.min.js'></script>
+<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type='text/javascript' src='./public/particles.js'></script>
+<script type='text/javascript' src='./globe.js'></script>
 </body>
 </html>
