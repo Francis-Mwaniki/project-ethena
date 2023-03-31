@@ -11,9 +11,9 @@
 </head>
 <body class="" style="margin: 6px;">
     <div class="main-body">
-        <h1 class="text-center">Contact Us</h1>
+        <h1 class="contact">Contact Us</h1>
         <p class="text-center">Let Chat. & Interact.</p>
-        <form class="my-form" method="POST"  onsubmit="">
+        <form class="my-form" id="myForm" action="https://formspree.io/f/xwkzrddd" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name">
           
@@ -30,18 +30,20 @@
           
     </div>
     <script>
-      const form = document.getElementsByTagName('form');
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const response = await fetch('http://localhost:3000/api/posts', {
-          method: 'POST',
-          body: formData
-        });
-        const data = await response.json();
-        console.log(data);
-        form.reset();
-      });
+      const form = document.getElementById('#myForm');
+
+     if (form) {
+       form.addEventListener('submit', (e) => {
+         e.preventDefault();
+         const formData = new FormData(form);
+         const data = Object.fromEntries(formData);
+         console.log(data);
+       });
+     }else{
+       console.log('form not found');
+     }
+
+
     </script>
 </body>
 <style>
@@ -56,7 +58,12 @@
 p{
   color: #fff;
 }
-
+.contact{
+  color: #fff;
+ 
+  font-size: 50px;
+  text-align: center;
+}
 label {
   margin-top: 10px;
 }
