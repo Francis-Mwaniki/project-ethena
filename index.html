@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://www.w3schools.com/lib/w3data.js"></script>
 <link rel="stylesheet" type="text/css" href="./public/main.css">
+<link rel="stylesheet" href="./css/index.css">
 <link rel="icon" href="./public/favicon.ico" />
 <script type='text/javascript' src='//d3js.org/d3.v3.min.js'></script>
 <script type='text/javascript' src='//d3js.org/topojson.v1.min.js'></script>
@@ -22,26 +23,54 @@
 <script type='text/javascript' src='./public/globe.js'></script>
 </head>
 <body>
-    <div w3-include-html="Navi.html"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container-fluid">
+         
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="sub-navbar">
+                <a class="navbar-brand" href="#">
+                    <img src="./public/logo.jpg" alt="" class="">
+                   
+                  </a>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#contact" tabindex="-1" aria-disabled="true">Contact</a>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End of Navigation -->
+     
      <!-- Hero -->
      <div class="Hero">
-        <div class="Hero__container">
+        <div class="Hero__container" id="home">
             <div class="Hero__container__text">
                 <h1 class="Hero__container__text__title font-sent">About Me</h1>
                 <p class="Hero__container__text__description" id="output" style="font-family:'Space Mono', monospace;"></p>
-                <button class="Hero__container__text__button">Contact me</button>
+                <a href="mailto:francismwaniki630@gmail.com" style="list-style: none; text-decoration:none"><button class="Hero__container__text__button cont">Contact me</button></a>
             </div>
             <div class="Hero__container__image">
               <!--   <img src="../src/public/code-coding.gif" alt=""> -->
-              <img src="https://cdn.dribbble.com/users/5636/screenshots/5100868/twc_dribbble_2018_development_collaboration_4x.png?compress=1&resize=1600x1200" alt="francis-mwaniki" />
+              <img class="img" src="https://cdn.dribbble.com/users/5636/screenshots/5100868/twc_dribbble_2018_development_collaboration_4x.png?compress=1&resize=1600x1200" alt="francis-mwaniki" />
                
             </div>
         </div>
     </div>
     <div id="root" class="container">
-        <div w3-include-html="Features.html"></div>
-        <div w3-include-html="Projects.html"></div>
-        <div w3-include-html="Contact.html"></div>
+        <div w3-include-html="Features.html" id="pricing"></div>
+        <div w3-include-html="Projects.html" id="projects"></div>
+        <div w3-include-html="Contact.html" id="contact"></div>
 
     </div>
      
@@ -69,6 +98,88 @@
             background-color: transparent;
             margin: auto;
         }
+        @media screen and (min-width: 312px) {
+            *{
+                font-size: 1rem;
+            }
+            .cont{
+                font-size: 1rem;
+                height: 3rem;
+                width: auto;
+                overflow: hidden;
+                padding: 30px 40px;
+                cursor: pointer;
+                flex: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                text-align: center;
+                border-radius: 5px;
+                color: #fff;
+                background-color: #000000;
+                border: none;
+            }
+            .container{
+                max-width: 100%;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 34px;
+                border-radius: 20px;
+                padding-top: 20px;
+            }
+            #root{
+                width: 312px;
+            }
+            .Hero{
+                padding-top: 60px;
+            }
+            .Hero__container{
+                flex-direction: column;
+                display: flex;
+                width: 300px;
+                height: auto;
+                gap: 20px;
+            }
+            .Hero__container__text{
+               width: 100%;
+                height: 50%;
+    
+            }
+            .Hero__container__text__title{
+                color: #ffffff;
+            }
+            .Hero__container__image{
+                width: 100%;
+                height: 50%;
+                padding-top: 30px;
+                
+                
+            }
+            .img{
+                width: 100%;
+                display: flex;
+                position: sticky;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                object-fit: cover;
+                margin: auto;
+                height: 300px;
+               
+            }
+             
+            
+           
+           
+            .Hero__container__text__description{
+                color: #ffffff;
+                font-size: 1rem;
+                padding: 20px;
+            }
+        }
+            
+        
         @media screen and (min-width: 768px) {
             .container{
                 max-width: 100%;
@@ -88,11 +199,12 @@
             .Hero__container{
                 flex-direction: column;
                 display: flex;
+                width: 700px;
                 height: auto;
                 gap: 20px;
             }
             .Hero__container__text{
-                width: 100%;
+               width: 100%;
                 height: 50%;
     
             }
@@ -102,10 +214,15 @@
                 margin-bottom: 1rem;
             }
             .Hero__container__image{
-                width: 600px;
-                padding-top: 80px;
+                width: 100%;
                 height: 50%;
-                object-position: center;
+                padding-top: 30px;
+            }
+        
+            .img{
+                width: 100%;
+                padding-top: 30px;
+                height: 300px;
                 object-fit: cover;
             }
             .Hero__container__text__button{
@@ -181,6 +298,21 @@
                 width: 1024px;
 
             }
+            .cont{
+                width: 300px;
+                height: 100%;
+                text-align: center;
+                border-radius: 5px;
+                color: #fff;
+                background-color: #000000;
+                border: none;
+            }
+            .img{
+                width: 100%;
+                padding-top: 30px;
+                height: 500px;
+                object-fit: cover;
+            }
             
         }
         @media screen and (min-width: 1280px) {
@@ -189,6 +321,12 @@
 
             }
             
+            .img{
+                width: 100%;
+                padding-top: 30px;
+                height: 500px;
+                object-fit: cover;
+            }
         }
         .font-sent {
             font-family: "Pacifico", cursive;
@@ -232,13 +370,13 @@
     <script>
         w3IncludeHTML();
 
-        let roles = ["software engineer", "student", "fullstack dev", "introvert"];
+        let roles = ["a software engineer", "a student", "a fullstack dev", "an introvert"];
         let roleIndex = 0;
         let speed = 100; // in milliseconds
         
         function writeRole(i) {
           let role = roles[roleIndex];
-          let text = "I am a ";
+          let text = "I am  ";
           for (let j = 0; j < role.length && j < i; j++) {
             text += role.charAt(j);
           }
@@ -261,6 +399,21 @@
         
         writeRole(0);
         
+    </script>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault(); // prevent default link behavior
+
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
     </script>
    <script type='text/javascript' src='//d3js.org/d3.v3.min.js'></script>
 <script type='text/javascript' src='//d3js.org/topojson.v1.min.js'></script>
